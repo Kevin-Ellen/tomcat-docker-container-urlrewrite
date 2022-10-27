@@ -7,6 +7,9 @@ Simple Tomcat Docker container that uses Tuckey's URLrewrite module
 1. [src/urlrewrite.xml](src/urlrewrite.xml) - File with all the redirects, for more information on syntax and flags visit https://www.tuckey.org/urlrewrite/
 2. [src/urlrewritefilter-4.0.3.jar](src/urlrewritefilter-4.0.3.jar) - JAR file to extend Tomcat
 3. [src/web.xml](src/web.xml) - Config file, as vanilla as possible with the `UrlRewriteFilter` filter added at the bottom between lines 165-174.
+4. [Dockerfile](Dockerfile) - Instructions to run and build the server, ensuring that the files above are copied into the working folder
+5. [docker-compose.yml](docker-compose.yml) - Building the app/server, exposing itself on `127.0.0.1:80:8080`
+
 
 ## How to use
 
@@ -40,3 +43,6 @@ Location: https://example.com/
 Transfer-Encoding: chunked
 Date: Thu, 27 Oct 2022 08:04:08 GMT
 ```
+
+## Notes
+* Need to restart server (so gracefully terminate with `cntrl-c` (Mac)) and restart upon changes to the `urlrewrite.xml` file - as the XML file is copied during built.
