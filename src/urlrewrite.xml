@@ -2,9 +2,9 @@
 <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite4.0//EN" "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
 <urlrewrite>
   <rule>
-    <name>https://testing.test/hello-world to https://example.com/</name>
+    <name>https://localhost/hello-world to https://example.com/</name>
     <note>Random redirect as example</note>
-    <condition name="host" operator="equal">testing.test</condition>
+    <condition name="host" operator="equal">localhost</condition>
     <from>^/hello-world$</from>
     <to type="permanent-redirect" last="true">https://example.com/</to>
   </rule>
